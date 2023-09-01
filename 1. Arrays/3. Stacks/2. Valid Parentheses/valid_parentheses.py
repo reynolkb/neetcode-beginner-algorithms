@@ -16,3 +16,14 @@ class Solution(object):
             stack.pop()
 
         return not stack
+
+
+def main():
+    s = "()[]{}"
+    solution = Solution()
+    result = solution.isValid(s)
+    print("Is Valid:", result)
+
+
+if __name__ == "__main__":
+    main()
