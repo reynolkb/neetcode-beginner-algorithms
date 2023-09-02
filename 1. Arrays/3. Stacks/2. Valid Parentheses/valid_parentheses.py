@@ -4,12 +4,12 @@ class Solution(object):
         stack = []
 
         for c in s:
-            # if character is not in map, it's an opening bracket
+            # if character is not a key in map, it's an opening bracket
             if c not in Map:
                 # add opening bracket to stack
                 stack.append(c)
                 continue
-            # `if not stack` returns true if the stack is empty
+            # if `not stack` returns true if the stack is empty
             # if the character at the top of the stack is not the valid open parentheses, return false
             if not stack or Map[c] != stack[-1]:
                 return False
