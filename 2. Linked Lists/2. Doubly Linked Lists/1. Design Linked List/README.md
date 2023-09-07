@@ -28,3 +28,6 @@ Explanation:\
 `myLinkedList.get(1);              // return 2`\
 `myLinkedList.deleteAtIndex(1);    // now the linked list is 1->3`\
 `myLinkedList.get(1);              // return 3`
+
+## Run Command
+`poetry run python "2. Linked Lists/2. Doubly Linked Lists/1. Design Linked List/design_linked_list.py"`
