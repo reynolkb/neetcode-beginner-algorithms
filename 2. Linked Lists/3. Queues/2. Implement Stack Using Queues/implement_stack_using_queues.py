@@ -34,3 +34,31 @@ class MyStack(object):
 
     def empty(self):
         return len(self.q) == 0
+
+
+def main():
+    methods = ["MyStack", "push", "push", "top", "pop", "empty"]
+    values = [[], [1], [2], [], [], []]
+
+    obj = None
+    outputs = []
+
+    for i, method in enumerate(methods):
+        if method == "MyStack":
+            obj = MyStack()
+            outputs.append(None)
+        elif method == "push":
+            obj.push(values[i][0])
+            outputs.append(None)
+        elif method == "pop":
+            outputs.append(obj.pop())
+        elif method == "top":
+            outputs.append(obj.top())
+        elif method == "empty":
+            outputs.append(obj.empty())
+
+    print("Outputs:", outputs)
+
+
+if __name__ == "__main__":
+    main()
