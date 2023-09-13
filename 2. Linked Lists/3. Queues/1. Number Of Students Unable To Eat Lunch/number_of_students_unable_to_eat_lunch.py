@@ -6,13 +6,14 @@ class Solution(object):
         students = deque(students)
         sandwiches = deque(sandwiches)
 
-        # number of students who cannot eat
+        # Currnet count of students who cannot eat
         count = 0
 
         while len(students) > 0:
             if students[0] == sandwiches[0]:
                 students.popleft()
                 sandwiches.popleft()
+                # Reset count to 0 since a student ate
                 count = 0
             else:
                 # Send the student to the back of the queue
