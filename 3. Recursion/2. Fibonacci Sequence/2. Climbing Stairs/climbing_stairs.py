@@ -3,24 +3,28 @@ class Solution(object):
         if n <= 3:
             return n
 
-        # n1 is set to 2 because there are 2 ways to climb 2 stairs at a time, either 1 + 1 or 2
+        # n1 initially represents the number of ways to climb from step 0 to step 2 (2 ways: 1 + 1 or 2)
         n1 = 2
-        # n2 is set to 3 because there are 3 ways to climb 3 stairs at a time, either 1 + 1 + 1, 2 + 1 or 1 + 2
+        # n2 initially represents the number of ways to climb from step 0 to step 3 (3 ways: 1 + 1 + 1, 1 + 2 or 2 + 1)
         n2 = 3
 
-        """ 
-        To climb to the nth stair, you have two options:
-
-        Take a single step from the (n-1)th stair.
-        Take a two-step leap from the (n-2)th stair.
-
-        Therefore, the total number of distinct ways to climb to the nth stair is the sum of the distinct ways to climb to the (n-1)th and (n-2)th stairs.
         """
+        To climb to the nth stair from step 0, you have two options:
+        1) Take a single step from the (n-1)th stair.
+        2) Take a two-step leap from the (n-2)th stair.
+
+        Therefore, the total number of distinct ways to reach the nth stair 
+        from step 0 is the sum of the distinct ways to reach the (n-1)th and (n-2)th stairs from step 0.
+        """
+
         for i in range(4, n + 1):
-            # sum of previous two steps
+            # Calculate the sum of the number of ways to climb from step 0 to the (n-1)th and (n-2)th stairs
+            # to find the number of ways to climb from step 0 to the nth stair.
             temp = n1 + n2
+            # Update n1 and n2 for the next iteration.
             n1 = n2
             n2 = temp
+
         return n2
 
 
