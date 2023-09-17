@@ -21,11 +21,11 @@ merging them into one sorted list:
 
 Example 2:\
 Input: `lists = []`\
-Output: `[]`\
+Output: `[]`
 
 Example 3:\
 Input: `lists = [[]]`\
-Output: `[]`\
+Output: `[]`
 
 ## Run Command
 `poetry run python "4. Sorting/2. Merge Sort/2. Merge K Sorted Lists/merge_k_sorted_lists.py"`
