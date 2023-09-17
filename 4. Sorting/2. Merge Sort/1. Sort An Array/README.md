@@ -16,4 +16,4 @@ Output: `[0,0,1,1,2,5]`\
 Explanation: `Note that the values of nums are not necessairly unique.`
 
 ## Run Command
-`poetry run python "4. Sorting/1. Insertion Sort/1. Sort An Array/insertion_sort.py"`
+`poetry run python "4. Sorting/2. Merge Sort/1. Sort An Array/sort_an_array.py"`
