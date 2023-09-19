@@ -63,20 +63,20 @@ class Solution(object):
                 # fifth iteration
                 # list2 = None
                 list2 = list2.next
-            # first iteration
-            # node = 1
+            # First iteration
+            # node = 1 -> None  (node now points to the first node with value 1)
 
-            # second iteration
-            # node = 1 -> 1
+            # Second iteration
+            # node = 1 -> None  (node still points to the second node with value 1, effectively making the list 1 -> 1 -> None)
 
-            # third iteration
-            # node = 1 -> 1 -> 2
+            # Third iteration
+            # node = 2 -> None  (node now points to the node with value 2, making the list 1 -> 1 -> 2 -> None)
 
-            # fourth iteration
-            # node = 1 -> 1 -> 2 -> 3
+            # Fourth iteration
+            # node = 3 -> None  (node now points to the node with value 3, making the list 1 -> 1 -> 2 -> 3 -> None)
 
-            # fifth iteration
-            # node = 1 -> 1 -> 2 -> 3 -> 4
+            # Fifth iteration
+            # node = 4 -> None  (node now points to the node with value 4, making the list 1 -> 1 -> 2 -> 3 -> 4 -> None)
             node = node.next
 
         # node.next = 4 -> None
