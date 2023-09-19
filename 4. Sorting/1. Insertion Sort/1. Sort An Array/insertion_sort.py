@@ -8,6 +8,7 @@ class Solution(object):
             j = i - 1
 
             # Shift elements that are greater than 'key' one position ahead
+            # With the example nums = [4, 3, 5, 2, 1] since 2 and 1 are at the end the while loop goes though tha max iterations to move 2 and 1 to the front of the list
             while j >= 0 and nums[j] > key:
                 nums[j + 1] = nums[j]
                 j -= 1
@@ -21,7 +22,7 @@ class Solution(object):
 
 def main():
     sol = Solution()
-    nums = [5, 1, 1, 2, 0, 0]
+    nums = [4, 3, 5, 2, 1]
     res = sol.sortArray(nums)
     print("The sorted list is " + str(res))
     """ 
