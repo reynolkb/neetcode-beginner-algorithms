@@ -7,6 +7,8 @@ class ListNode(object):
 class Solution(object):
     def mergeTwoLists(self, list1, list2):
         # set dummy and node to the same instance of ListNode
+        # by setting node = node.next at the end, we are moving down the LinkedList.
+        # however, dummy stays at the beginning
         dummy = node = ListNode()
 
         while list1 and list2:
@@ -64,19 +66,19 @@ class Solution(object):
                 # list2 = None
                 list2 = list2.next
             # First iteration
-            # node = 1 -> None  (node now points to the first node with value 1)
+            # node = 1 -> 3 -> 4 -> None
 
             # Second iteration
-            # node = 1 -> None  (node still points to the second node with value 1, effectively making the list 1 -> 1 -> None)
+            # node = 1 -> 2 -> 4 -> None
 
             # Third iteration
-            # node = 2 -> None  (node now points to the node with value 2, making the list 1 -> 1 -> 2 -> None)
+            # node = 2 -> 4 -> None
 
             # Fourth iteration
-            # node = 3 -> None  (node now points to the node with value 3, making the list 1 -> 1 -> 2 -> 3 -> None)
+            # node = 3 -> 4 -> None
 
             # Fifth iteration
-            # node = 4 -> None  (node now points to the node with value 4, making the list 1 -> 1 -> 2 -> 3 -> 4 -> None)
+            # node = 4 -> None
             node = node.next
 
         # node.next = 4 -> None
