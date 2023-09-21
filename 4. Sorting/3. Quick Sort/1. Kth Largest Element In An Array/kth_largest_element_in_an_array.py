@@ -1,5 +1,6 @@
 class Solution(object):
     def findKthLargest(self, nums, k):
+        # since we are sorting array in ascending order, we have to update k to reflect the index correctly
         k = len(nums) - k
         left, right = 0, len(nums) - 1
 
@@ -18,21 +19,21 @@ class Solution(object):
             else:
                 break
 
-        # Return the kth smallest element, which is the kth largest element
         return nums[k]
 
     # Function to partition the array for quickselect
     def partition(self, nums, left, right):
-        # Initialize pivot and fill variables
-        pivot, fill = nums[right], left
+        # Initialize fill pointer and pivot variable
+        fill, pivot = left, nums[right]
 
         # Loop through array to move smaller elements to the left of pivot
         for i in range(left, right):
             if nums[i] <= pivot:
+                # since fill starts at 0 and i starts at 0, we are setting fill to i, then incrementing fill by 1 for next slot
                 nums[fill], nums[i] = nums[i], nums[fill]
                 fill += 1
 
-        # Move the pivot element to its sorted position
+        # Move the pivot element to its fill position since everything to the left will be smaller and right is initially set at the last element
         nums[fill], nums[right] = nums[right], nums[fill]
 
         # Return the position of the pivot
