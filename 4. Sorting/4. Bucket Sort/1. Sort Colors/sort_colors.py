@@ -4,6 +4,7 @@ class Solution(object):
         high = len(nums) - 1
         mid = 0
 
+        # use <= so we check all elements
         while mid <= high:
             if nums[mid] == 0:
                 nums[low], nums[mid] = nums[mid], nums[low]
