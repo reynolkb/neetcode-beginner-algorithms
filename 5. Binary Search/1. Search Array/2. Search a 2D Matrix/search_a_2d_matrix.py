@@ -46,3 +46,19 @@ class Solution(object):
 
         # If the loop completes without finding the target, return False
         return False
+
+
+def main():
+    matrix = [
+        [1, 3, 5, 7],
+        [10, 11, 16, 20],
+        [23, 30, 34, 60],
+    ]
+    target = 3
+    sol = Solution()
+    result = sol.searchMatrix(matrix, target)
+    print(f"The target {target} is in the Matrix {result}")
+
+
+if __name__ == "__main__":
+    main()

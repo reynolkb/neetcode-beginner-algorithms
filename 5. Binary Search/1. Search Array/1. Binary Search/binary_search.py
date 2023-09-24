@@ -2,6 +2,8 @@ class Solution(object):
     def search(self, nums, target):
         l, r = 0, len(nums) - 1
 
+        # do <= to check every element
+        # < would skip the element at index where l == r
         while l <= r:
             m = (l + r) // 2
             if nums[m] < target:
