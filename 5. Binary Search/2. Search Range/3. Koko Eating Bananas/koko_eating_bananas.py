@@ -6,7 +6,8 @@ class Solution(object):
     def hours_needed(self, speed, piles):
         totalTime = 0
         for pile in piles:
-            totalTime += math.ceil(pile / speed)
+            # math.ceil(pile / speed)
+            totalTime += -(-pile // speed)
         return totalTime
 
     def minEatingSpeed(self, piles, h):
