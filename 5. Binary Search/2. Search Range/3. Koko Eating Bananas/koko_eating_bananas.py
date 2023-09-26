@@ -1,6 +1,3 @@
-import math
-
-
 class Solution(object):
     # Helper function to find hours needed for a given speed
     def hours_needed(self, speed, piles):
