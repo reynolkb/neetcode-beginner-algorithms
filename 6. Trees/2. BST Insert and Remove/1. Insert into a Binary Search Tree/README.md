@@ -22,4 +22,4 @@ Input: `root = [4,2,7,1,3,null,null,null,null,null,null], val = 5`\
 Output: `[4,2,7,1,3,5]`
 
 ## Run Command
-`poetry run python "6. Trees/1. Binary Search Tree/1. Search In A Binary Search Tree/search_in_a_binary_search_tree.py"`
+`poetry run python "6. Trees/2. BST Insert and Remove/1. Insert into a Binary Search Tree/insert_into_a_binary_search_tree.py"`
