@@ -13,7 +13,6 @@ Explanation: `Another accepted tree is:`\
 ![Example 1B](example_1b.jpeg)
 
 Example 2:\
-![Example 2](example_2.jpeg)\
 Input: `root = [40,20,60,10,30,50,70], val = 25`\
 Output: `[40,20,60,10,30,50,70,null,null,25]`
 
