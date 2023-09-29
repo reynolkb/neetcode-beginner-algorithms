@@ -17,4 +17,4 @@ Input: `root = [1]`\
 Output: `[1]`
 
 ## Run Command
-`poetry run python "6. Trees/3. Depth First Binary Search/1. Binary Tree Inorder Traversal/binary_tree_inorder_traversal.py"`
+`poetry run python "6. Trees/3. Depth First Search/1. Binary Tree Inorder Traversal/binary_tree_inorder_traversal.py"`
