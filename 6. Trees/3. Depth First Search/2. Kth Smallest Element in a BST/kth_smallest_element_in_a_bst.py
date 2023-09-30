@@ -13,14 +13,23 @@ class Solution:
         stack = []
         curr = root
 
+        # Continue as long as there are nodes in the stack or a current node to explore
         while stack or curr:
+            # Traverse to the leftmost node and push nodes onto the stack along the way
             while curr:
                 stack.append(curr)
                 curr = curr.left
+
+            # Pop the top node from stack and make it the current node
             curr = stack.pop()
+            # Decrement k as we've visited one more node
             k -= 1
+
+            # If k becomes 0, we've reached the kth smallest
             if k == 0:
                 return curr.val
+
+            # Move to the right child of the current node for the next iteration
             curr = curr.right
 
 
@@ -66,7 +75,7 @@ def main():
 
     # Create the solution object and find the kth smallest element
     sol = Solution()
-    k = 3
+    k = 4
     result = sol.kthSmallest(root, k)
 
     # Print the result
