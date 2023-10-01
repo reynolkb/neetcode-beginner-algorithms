@@ -1,4 +1,5 @@
 from collections import deque
+from typing import List, Optional
 
 
 # Definition for a binary tree node.
@@ -9,38 +10,21 @@ class TreeNode(object):
         self.right = right
 
 
-class Solution(object):
-    def buildTree(self, preorder, inorder):
-        # Create an empty dictionary
-        inorder_dict = {}
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        # preorder ALWAYS has the node first. But you don't know the size of either branch.
+        # inorder ALWAYS has the left branch to the left of the node, and right branch right of the node. So now you know the size of each branch.
+        if not preorder or not inorder:
+            return None
 
-        # Loop through the list with index and value
-        for idx, num in enumerate(inorder):
-            # Assign the index to the corresponding number in the dictionary
-            inorder_dict[num] = idx
-
-        # Pointer for preorder list
-        pre_idx = [0]
-
-        # Recursive function to build the tree
-        def build_tree(left, right):
-            if left > right:
-                return None
-
-            # Get the current root from preorder
-            root_val = preorder[pre_idx[0]]
-            root = TreeNode(root_val)
-
-            # Move the pointer for preorder list
-            pre_idx[0] += 1
-
-            # Split the inorder list and build left and right subtrees
-            root.left = build_tree(left, inorder_dict[root_val] - 1)
-            root.right = build_tree(inorder_dict[root_val] + 1, right)
-
-            return root
-
-        return build_tree(0, len(inorder) - 1)
+        root_val = preorder[0]
+        root = TreeNode(root_val)
+        mid = inorder.index(root_val)
+        # start at 1 for preorder since you want to skip index 0 which is the root_val
+        # end at one before mid(exclusive) for inorder since we want to skip root_val
+        root.left = self.buildTree(preorder[1 : mid + 1], inorder[:mid])
+        root.right = self.buildTree(preorder[mid + 1 :], inorder[mid + 1 :])
+        return root
 
 
 def level_order_traversal(root):
