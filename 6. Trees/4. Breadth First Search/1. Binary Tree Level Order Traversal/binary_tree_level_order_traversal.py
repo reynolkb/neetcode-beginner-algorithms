@@ -17,10 +17,10 @@ class Solution(object):
         queue = deque([root])
 
         while queue:
-            level_size = len(queue)
+            level_length = len(queue)
             current_level = []
 
-            for i in range(level_size):
+            for i in range(level_length):
                 node = queue.popleft()
                 current_level.append(node.val)
 
