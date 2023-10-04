@@ -20,6 +20,7 @@ class Solution(object):
             level_length = len(queue)
             for i in range(level_length):
                 node = queue.popleft()
+                # grab the right side of the current level
                 if i == level_length - 1:
                     result.append(node.val)
                 if node.left:
@@ -50,7 +51,7 @@ def deserialize(data):
 
 
 def main():
-    data = [1, 2, 3, None, 5, None, 4]
+    data = [1, 2, 3, 4, 5, 6, 7]
     root = deserialize(data)
     solution = Solution()
     output = solution.rightSideView(root)
