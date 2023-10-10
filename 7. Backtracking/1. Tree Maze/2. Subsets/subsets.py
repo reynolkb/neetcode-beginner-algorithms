@@ -6,7 +6,8 @@ class Solution(object):
         def dfs(i):
             # Base case: If 'i' is equal to or greater than the length of nums,
             # it means we've finished exploring all numbers in the list.
-            if i >= len(nums):
+            # once i == len(nums) we've checked every element in the subsets list.
+            if i == len(nums):
                 """
                 Append the current state of 'subset' to the result list.
                 Using 'subset.copy()' ensures we save the current contents of 'subset' as a new distinct list.
