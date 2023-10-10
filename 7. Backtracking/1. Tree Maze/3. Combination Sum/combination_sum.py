@@ -19,7 +19,7 @@ class Solution(object):
 
             # Base case 2: If 'i' has reached the end of candidates or if the total exceeds the target,
             # it means the current path is not valid, so we return without making further recursive calls.
-            if i >= len(candidates) or total > target:
+            if i == len(candidates) or total > target:
                 return
 
             # Recursive case 1: Decide to include the current candidate, candidates[i], in the combination.
