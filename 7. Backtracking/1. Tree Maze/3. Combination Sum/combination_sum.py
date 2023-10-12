@@ -31,7 +31,7 @@ class Solution(object):
             # Recursive case 2: Decide NOT to include candidates[i] in the combination.
             # Remove the last appended candidate.
             cur.pop()
-            # Continue the search with the next index, without the current candidate.
+            # Continue the search with the next index and do not include the current candidate in the total
             dfs(i + 1, cur, total)
 
         # Start the DFS traversal from the first candidate with an initial total of 0 and an empty 'cur' list.
