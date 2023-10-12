@@ -26,4 +26,4 @@ kthLargest.add(4);   // return 8
 ```
 
 ## Run Command
-`poetry run python "8. Heap - Priority Queue/1. Push and Pop/1. Kth Longest Element in a Stream/kth_largest_element_in_a_stream.py"`
+`poetry run python "8. Heap Priority Queue/1. Push and Pop/1. Kth Largest Element in a Stream/kth_largest_element_in_a_stream.py"`

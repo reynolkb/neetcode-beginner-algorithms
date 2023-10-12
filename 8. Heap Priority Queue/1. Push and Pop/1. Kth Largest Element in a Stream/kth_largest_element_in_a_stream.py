@@ -31,3 +31,28 @@ class KthLargest:
         # The 0th element of our min-heap (the root) is the kth largest element.
         # We return it as the result.
         return self.minHeap[0]
+
+
+def main():
+    # Initialize variables for input and output
+    commands = ["KthLargest", "add", "add", "add", "add", "add"]
+    values = [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]
+    output = []
+
+    # Initialize the object to None before using it
+    obj = None
+
+    # Loop through commands and execute them
+    for i in range(len(commands)):
+        if commands[i] == "KthLargest":
+            obj = KthLargest(values[i][0], values[i][1])
+            output.append(None)
+        elif commands[i] == "add":
+            result = obj.add(values[i][0])
+            output.append(result)
+
+    print("Output:", output)
+
+
+if __name__ == "__main__":
+    main()
