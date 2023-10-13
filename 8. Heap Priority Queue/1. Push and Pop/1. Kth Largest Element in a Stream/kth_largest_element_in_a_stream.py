@@ -15,7 +15,7 @@ class KthLargest:
         # If the size of our min-heap is greater than k,
         # then pop the smallest elements until its size becomes k.
         # This ensures that our heap always contains the k largest elements seen so far.
-        while len(self.minHeap) > k:
+        while len(self.minHeap) > self.k:
             heapq.heappop(self.minHeap)
 
     def add(self, val: int) -> int:
