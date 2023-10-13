@@ -27,4 +27,4 @@ Input: `stones = [1]`\
 Output: `1`
 
 ## Run Command
-`poetry run python "8. Heap Priority Queue/1. Push and Pop/1. Kth Largest Element in a Stream/kth_largest_element_in_a_stream.py"`
+`poetry run python "8. Heap Priority Queue/2. Heapify/1. Last Stone Weight/last_stone_weight.py"`
