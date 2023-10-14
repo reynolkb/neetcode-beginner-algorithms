@@ -18,8 +18,8 @@ class Solution:
             # Pop the second heaviest stone
             second = heapq.heappop(stones)
 
-            # If the two stones have different weights
-            if second != first:
+            # If the second stone is greater than the first, which means less than since they're both negative
+            if second > first:
                 # Push the remaining weight back into heap
                 heapq.heappush(stones, first - second)
 
