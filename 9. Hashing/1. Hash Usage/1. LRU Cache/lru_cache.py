@@ -45,7 +45,7 @@ class LRUCache:
         if key in self.cache:
             # If yes, remove the node from its current position
             self.remove(self.cache[key])
-            # Reinsert the node at the right end
+            # Reinsert the node at the right end using custom class insert method
             self.insert(self.cache[key])
             # Return the value of the node
             return self.cache[key].val
@@ -71,6 +71,10 @@ class LRUCache:
             self.remove(lru)
             # Remove the least recently used node from the cache
             del self.cache[lru.key]
+
+    """ 
+    The left end of the list represents the least recently used items, while the right end represents the most recently used items (put or get).
+    """
 
 
 def process_operations(operations, values):
