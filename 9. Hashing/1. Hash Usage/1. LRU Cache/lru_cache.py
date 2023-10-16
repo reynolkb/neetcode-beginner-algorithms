@@ -22,18 +22,12 @@ class LRUCache:
         # Get the previous and next nodes
         prev, nxt = node.prev, node.next
         # Update their pointers to bypass the current node
-        prev.next, nxt.prev = (
-            nxt,
-            prev,
-        )
+        prev.next, nxt.prev = nxt, prev
 
     # Method to insert a node at the right end of the doubly linked list
     def insert(self, node):
         # Get the node before the right dummy node
-        prev, nxt = (
-            self.right.prev,
-            self.right,
-        )
+        prev, nxt = self.right.prev, self.right
         # Update their pointers to include the new node
         prev.next = nxt.prev = node
         # Update the new node's pointers
