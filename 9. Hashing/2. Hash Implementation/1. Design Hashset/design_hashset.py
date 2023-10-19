@@ -3,28 +3,28 @@ class MyHashSet:
         # Initialize an array with a fixed size (for simplicity)
         self.buckets = [[] for _ in range(1000)]
 
-    def hash_function(self, key: int) -> int:
+    def getIndex(self, key: int) -> int:
         # Simple hash function to map keys to buckets
         # For example, if key = 1 then 1 % 1000 = 1 since 1 cannot be divided by 1000 giving a remainder of 1
         return key % len(self.buckets)
 
     def add(self, key: int) -> None:
         # Get the index of the bucket
-        index = self.hash_function(key)
+        index = self.getIndex(key)
         # If key is not already present in the bucket, add it
         if key not in self.buckets[index]:
             self.buckets[index].append(key)
 
     def remove(self, key: int) -> None:
         # Get the index of the bucket
-        index = self.hash_function(key)
+        index = self.getIndex(key)
         # If key is present in the bucket, remove it
         if key in self.buckets[index]:
             self.buckets[index].remove(key)
 
     def contains(self, key: int) -> bool:
         # Get the index of the bucket
-        index = self.hash_function(key)
+        index = self.getIndex(key)
         # Check if key is present in the bucket
         return key in self.buckets[index]
 
