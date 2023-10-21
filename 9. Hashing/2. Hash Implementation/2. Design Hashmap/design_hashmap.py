@@ -10,20 +10,20 @@ class ListNode:
 
 class MyHashMap:
     def __init__(self):
-        self.map = [ListNode() for i in range(1000)]
+        self.listNodeArr = [ListNode() for i in range(1000)]
 
     def getIndex(self, key):
         # Return the remainder of key divided by the length of self.map
         # For example, if key = 1 then 1 % 1000 = 1 since 1 cannot be divided by 1000 giving a remainder of 1
-        return key % len(self.map)
+        return key % len(self.listNodeArr)
 
     def put(self, key: int, value: int) -> None:
         # Get the index of the bucket
         index = self.getIndex(key)
-        # Get the bucket where the key-value pair should be stored
-        cur = self.map[index]
+        # Get the bucket's head node where the key-value pair should be stored
+        cur = self.listNodeArr[index]
         # Traverse the linked list in the bucket
-        # Start at cur.next since cur is a dummy node
+        # Start at cur.next since cur is a dummy node with key = None and val = None
         while cur.next:
             # If the key already exists, update its value
             if cur.next.key == key:
@@ -39,7 +39,7 @@ class MyHashMap:
         index = self.getIndex(key)
         # Get the first node in the bucket's linked list
         # Start at cur.next since cur is a dummy node
-        cur = self.map[index].next
+        cur = self.listNodeArr[index].next
         # Traverse the linked list to find the key
         while cur and cur.key != key:
             # Move to the next node in the linked list
@@ -54,7 +54,7 @@ class MyHashMap:
         index = self.getIndex(key)
         # Get the bucket where the key-value pair should be stored
         # Start at cur which is the dummy node since we need to know the node before the one we want to remove
-        cur = self.map[index]
+        cur = self.listNodeArr[index]
         # Traverse the linked list to find the key
         while cur.next:
             # If the key of the next node matches the key to be removed
