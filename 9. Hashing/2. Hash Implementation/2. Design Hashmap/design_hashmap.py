@@ -44,7 +44,7 @@ class MyHashMap:
         while cur and cur.key != key:
             # Move to the next node in the linked list
             cur = cur.next
-        # If the key is found, return its value
+        # If the key is found, return its value. Pretty much if cur exists at the end of the while loop you know you have found the val
         if cur:
             return cur.val
         return -1
