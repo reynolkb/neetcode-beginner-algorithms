@@ -6,35 +6,35 @@ class ListNode(object):
 
 class Solution(object):
     def reverseList(self, head: ListNode) -> ListNode:
-        prev, curr = None, head
+        prev, cur = None, head
 
         # prev = None
-        # curr = 1 -> 2 -> 3 -> None
-        while curr:
+        # cur = 1 -> 2 -> 3 -> None
+        while cur:
             # temp = 2 -> 3 -> None
             # temp = 3 -> None
             # temp = None
-            temp = curr.next
+            temp = cur.next
 
-            # curr.next = None
-            # curr.next = 1 -> None
-            # curr.next = 2 -> 1 -> None
-            curr.next = prev
+            # cur.next = None
+            # cur.next = 1 -> None
+            # cur.next = 2 -> 1 -> None
+            cur.next = prev
 
             # prev = 1 -> None
-            # since curr.value = 1 and curr.next = None
+            # since cur.value = 1 and cur.next = None
 
             # prev = 2 -> 1 -> None
-            # since curr.value = 2 and curr.next = 1 -> None
+            # since cur.value = 2 and cur.next = 1 -> None
 
             # prev = 3 -> 2 -> 1 -> None
-            # since curr.value = 3 and curr.next = 2 -> 1 -> None
-            prev = curr
+            # since cur.value = 3 and cur.next = 2 -> 1 -> None
+            prev = cur
 
-            # curr = 2 -> 3 -> None
-            # curr = 3 -> None
-            # curr = None
-            curr = temp
+            # cur = 2 -> 3 -> None
+            # cur = 3 -> None
+            # cur = None
+            cur = temp
         return prev
 
 
@@ -52,10 +52,10 @@ def main():
     reversed_head = sol.reverseList(head)
 
     # Print the reversed linked list
-    curr = reversed_head
-    while curr:
-        print(curr.val, end=" -> ")
-        curr = curr.next
+    cur = reversed_head
+    while cur:
+        print(cur.val, end=" -> ")
+        cur = cur.next
     print("None")
 
 

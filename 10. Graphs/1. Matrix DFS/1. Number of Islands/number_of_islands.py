@@ -28,7 +28,13 @@ class Solution:
             # Mark the cell as visited by adding to the set
             visit.add((r, c))
 
+            """ 
             # Define directions for adjacent cells
+            [0, 1]: Move right (same row, next column)
+            [0, -1]: Move left (same row, previous column)
+            [1, 0]: Move down (next row, same column)
+            [-1, 0]: Move up (previous row, same column) 
+            """
             directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
 
             # Visit all adjacent cells
