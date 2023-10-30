@@ -14,15 +14,10 @@ class Solution:
         visit = set((0, 0))
 
         # Define the directions to move in the grid
+        # fmt: off
         directions = [
-            [0, 1],
-            [1, 0],
-            [0, -1],
-            [-1, 0],
-            [1, 1],
-            [-1, -1],
-            [1, -1],
-            [-1, 1],
+            [0, 1], [1, 0], [0, -1], [-1, 0], 
+            [1, 1], [-1, -1], [1, -1], [-1, 1]
         ]
 
         # Loop until the deque is empty
@@ -53,7 +48,12 @@ class Solution:
 
 
 def main():
-    grid = [[0, 0, 0], [1, 1, 0], [1, 1, 0]]
+    # fmt: off
+    grid = [
+        [0, 0, 0],
+        [1, 1, 0],
+        [1, 1, 0]
+    ]
     solution = Solution()
     result = solution.shortestPathBinaryMatrix(grid)
     print("Output:", result)
