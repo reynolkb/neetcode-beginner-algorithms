@@ -14,15 +14,24 @@ class Solution:
         visit = set((0, 0))
 
         # Define the directions to move in the grid
-        direct = [[0, 1], [1, 0], [0, -1], [-1, 0], [1, 1], [-1, -1], [1, -1], [-1, 1]]
+        directions = [
+            [0, 1],
+            [1, 0],
+            [0, -1],
+            [-1, 0],
+            [1, 1],
+            [-1, -1],
+            [1, -1],
+            [-1, 1],
+        ]
 
         # Loop until the deque is empty
         while q:
             # Pop the front element from deque and unpack its values
             r, c, length = q.popleft()
 
-            # Skip if the cell is out of grid or blocked
-            if min(r, c) < 0 or max(r, c) >= N or grid[r][c]:
+            # Skip if the cell is out of grid or grid[r][c] == 1 since 0 is false and 1 is true
+            if min(r, c) < 0 or max(r, c) == N or grid[r][c]:
                 continue
 
             # Check if we reached the destination
@@ -30,7 +39,7 @@ class Solution:
                 return length
 
             # Loop through all possible directions
-            for dr, dc in direct:
+            for dr, dc in directions:
                 # Check if the cell is visited
                 if (r + dr, c + dc) not in visit:
                     # Append the new cell to deque with incremented length
@@ -41,3 +50,14 @@ class Solution:
 
         # Return -1 if there is no path
         return -1
+
+
+def main():
+    grid = [[0, 0, 0], [1, 1, 0], [1, 1, 0]]
+    solution = Solution()
+    result = solution.shortestPathBinaryMatrix(grid)
+    print("Output:", result)
+
+
+if __name__ == "__main__":
+    main()
