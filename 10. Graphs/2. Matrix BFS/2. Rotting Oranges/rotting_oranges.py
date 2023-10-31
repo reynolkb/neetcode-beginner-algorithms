@@ -1,4 +1,3 @@
-# Define a class named Solution with a method orangesRotting that takes a grid as input
 from collections import deque
 from typing import List
 
@@ -12,9 +11,11 @@ class Solution:
         # Time counter initialized to 0
         time = 0
 
+        rows, cols = len(grid), len(grid[0])
+
         # Iterate over rows and columns to find rotten and fresh oranges
-        for r in range(len(grid)):
-            for c in range(len(grid[0])):
+        for r in range(rows):
+            for c in range(cols):
                 # Count fresh oranges
                 if grid[r][c] == 1:
                     fresh += 1
@@ -36,8 +37,8 @@ class Solution:
                     row, col = r + dr, c + dc
                     # Check bounds and update fresh to rotten
                     if (
-                        row in range(len(grid))
-                        and col in range(len(grid[0]))
+                        row in range(rows)
+                        and col in range(cols)
                         and grid[row][col] == 1
                     ):
                         grid[row][col] = 2
@@ -47,3 +48,14 @@ class Solution:
             time += 1
         # Return time if no fresh oranges left, otherwise return -1
         return time if fresh == 0 else -1
+
+
+def main():
+    grid = [[2, 1, 1], [1, 1, 0], [0, 1, 1]]
+    solution = Solution()
+    result = solution.orangesRotting(grid)
+    print("Output:", result)
+
+
+if __name__ == "__main__":
+    main()
