@@ -30,7 +30,7 @@ class Solution:
         while fresh > 0 and q:
             length = len(q)
             # Process each level of rotten oranges in the queue
-            for i in range(length):
+            for _ in range(length):
                 r, c = q.popleft()
                 # Spread rot to adjacent fresh oranges
                 for dr, dc in directions:
