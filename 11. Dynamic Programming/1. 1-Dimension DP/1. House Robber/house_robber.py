@@ -3,7 +3,10 @@ from typing import List
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        # Initialize two variables 'rob1' and 'rob2' to 0
+        """
+        rob1: the max total that can be robbed up to two houses before the current house
+        rob2: the max total that can be robbed up to the house right before the current house
+        """
         rob1, rob2 = 0, 0
 
         for n in nums:
@@ -20,7 +23,7 @@ class Solution:
 
 
 def main():
-    nums = [1, 2, 3, 1]
+    nums = [2, 7, 9, 3, 1]
     solution = Solution()
     result = solution.rob(nums)
     print("Output:", result)
