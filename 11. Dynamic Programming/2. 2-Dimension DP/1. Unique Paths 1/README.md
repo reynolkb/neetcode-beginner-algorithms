@@ -1,4 +1,4 @@
-# [Unique Paths](https://leetcode.com/problems/unique-paths/)
+# [Unique Paths 1](https://leetcode.com/problems/unique-paths/)
 
 ## Description
 
@@ -32,4 +32,4 @@ From the top-left corner, there are a total of 3 ways to reach the bottom-right 
 
 ## Run Command
 
-`poetry run python "11. Dynamic Programming/2. 2-Dimension DP/1. Unique Paths/unique_paths.py"`
+`poetry run python "11. Dynamic Programming/2. 2-Dimension DP/1. Unique Paths 1/unique_paths_1.py"`
