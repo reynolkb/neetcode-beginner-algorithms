@@ -18,7 +18,8 @@ class Solution:
                 # If the current cell is an obstacle, set its path count to 0
                 if grid[r][c]:
                     dp[c] = 0
-                # If it's not an obstacle, add the path count from the cell to the right and the cell below
+                # If it's not an obstacle, add the path count from the cell below and the cell to the right
+                # dp[c] is the cell below since it is updated outside the inner loop
                 elif c + 1 < column:
                     dp[c] = dp[c] + dp[c + 1]
 
