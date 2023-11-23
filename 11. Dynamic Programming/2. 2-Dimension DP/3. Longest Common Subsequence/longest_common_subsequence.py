@@ -1,11 +1,11 @@
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         # Create a 2D array 'dp' with dimensions (len(text1)+1) x (len(text2)+1)
+        # we add +1 for an extra row and column to act as a buffer later on when we're doing i + 1 and j + 1
         # Initialize all elements to 0. This array will be used for dynamic programming
         dp = [[0 for j in range(len(text2) + 1)] for i in range(len(text1) + 1)]
 
         for i in range(len(text1) - 1, -1, -1):
-
             # For each character in text1, iterate over text2 in reverse order
             for j in range(len(text2) - 1, -1, -1):
                 # If the current characters in text1 and text2 match
