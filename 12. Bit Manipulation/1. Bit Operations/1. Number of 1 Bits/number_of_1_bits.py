@@ -12,7 +12,7 @@ class Solution:
 
 
 def main():
-    n = 0o0000000000000000000000000001011
+    n = 0b0000000000000000000000000001011
     solution = Solution()
     result = solution.hammingWeight(n)
     print("Output:", result)
