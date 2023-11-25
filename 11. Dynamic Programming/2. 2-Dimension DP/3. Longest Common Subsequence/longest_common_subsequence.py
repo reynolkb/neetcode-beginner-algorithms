@@ -13,10 +13,10 @@ class Solution:
                     # Set dp[i][j] to 1 plus the value of dp[i+1][j+1]
                     # This accounts for the matching character and adds the length of the common subsequence found so far
                     dp[i][j] = 1 + dp[i + 1][j + 1]
-
                 else:
-                    # If the characters do not match, set dp[i][j] to the maximum of dp[i][j+1] and dp[i+1][j]
-                    # This effectively skips one character either from text1 or text2 and takes the maximum length found so far
+                    # dp[i][j + 1] - keep position for text1, but move to the next character of text2
+                    # dp[i + 1][j] - keep position for text2, but move to the next character of text1
+                    # pretty much we are taking the max of either substring combination
                     dp[i][j] = max(dp[i][j + 1], dp[i + 1][j])
 
         # Return the top-left element of the dp array, which contains the length of the longest common subsequence
