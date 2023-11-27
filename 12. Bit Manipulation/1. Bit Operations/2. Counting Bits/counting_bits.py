@@ -20,5 +20,14 @@ def main():
     print("Output:", result)
 
 
+"""
+Input: 2
+Output: [0, 1, 1]
+
+0 in binary is 0. The number of 1's in this binary number is 0.
+1 in binary is 1. The number of 1's in this binary number is 1.
+2 in binary is 10. The number of 1's in this binary number is 1.
+"""
+
 if __name__ == "__main__":
     main()
